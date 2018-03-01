@@ -73,6 +73,8 @@ while :; do echo
     fi
     fi
     break
+  elif [ ${IfChangeSSHPort} == 'n' ]; then
+    break
   elif [ ${IfChangeSSHPort} == '' ]; then
     break
   else

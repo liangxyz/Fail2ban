@@ -73,23 +73,15 @@ while :; do echo
     fi
     fi
     break
-  elif [ ${IfChangeSSHPort} == 'n' ]; then
+  elif [ ${IfChangeSSHPort} == '' ]; then
     break
   else
     echo "${CWARNING}Input error! Please only input y or n!${CEND}"
   fi
 done
 ssh_port=$SSH_PORT
-echo ""
-	read -p "Input the maximun times for trying [2-10]:  " maxretry
-echo ""
-read -p "Input the lasting time for blocking a IP [hours]:  " bantime
-if [ ${maxretry} == '' ]; then
-	maxretry=3
-fi
-if [ ${bantime} == '' ];then
-	bantime=24
-fi
+maxretry=3
+bantime=24
 ((bantime=$bantime*60*60))
 #Install
 if [ ${OS} == CentOS ]; then

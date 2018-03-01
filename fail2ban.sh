@@ -80,7 +80,7 @@ while :; do echo
   fi
 done
 ssh_port=$SSH_PORT
-maxretry=3
+maxretry=9
 bantime=24
 ((bantime=$bantime*60*60))
 #Install

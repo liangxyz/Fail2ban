@@ -54,7 +54,7 @@ echo ""
 
 while :; do echo
   read -p "Do you want to change your SSH Port? [y/n]: " IfChangeSSHPort
-  if [ ${IfChangeSSHPort} == 'y' ]; then
+  if [[ ${IfChangeSSHPort} == 'y' ]]; then
     if [ -e "/etc/ssh/sshd_config" ];then
     [ -z "`grep ^Port /etc/ssh/sshd_config`" ] && ssh_port=22 || ssh_port=`grep ^Port /etc/ssh/sshd_config | awk '{print $2}'`
     while :; do echo
@@ -73,9 +73,7 @@ while :; do echo
     fi
     fi
     break
-  elif [ ${IfChangeSSHPort} == 'n' ]; then
-    break
-  elif [ ${IfChangeSSHPort} == '' ]; then
+  elif [[ ${IfChangeSSHPort} == '' ]]; then
     break
   else
     echo "${CWARNING}Input error! Please only input y or n!${CEND}"
